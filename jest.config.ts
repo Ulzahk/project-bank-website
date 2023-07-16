@@ -1,18 +1,19 @@
 import { Config } from 'jest';
 
 const config: Config = {
+  collectCoverage: true,
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/src/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
   ],
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.ts',
-    '^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$':
-      '<rootDir>/__mocks__/fileMock.ts',
-    '^@pages(.*)$': '<rootDir>/src/pages$1',
+    '^.+\\.svg$': '<rootDir>/src/__mocks__/svgTransform.js',
     '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@images(.*)$': '<rootDir>/public/assets/images$1',
+    '^@pages(.*)$': '<rootDir>/src/pages$1',
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',

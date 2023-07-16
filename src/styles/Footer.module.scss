@@ -1,0 +1,24 @@
+@import '@styles/Constants.scss';
+
+.footer {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid $border-gray;
+}
+.footerList {
+  margin: 0;
+  padding: 0;
+}
+.footerListLink {
+  text-decoration: underline;
+  color: $gray-letters;
+  list-style: none;
+  font-size: 18px;
+  transition: text-decoration 0.3s;
+}
+.footerListLink:hover {
+  text-decoration: none;
+}

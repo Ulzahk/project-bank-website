@@ -1,17 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import Header from '@components/Header';
+import Footer from '@components/Footer';
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
-describe('Header component', () =>{
+describe('Footer component', () =>{
   it('should render a nav element', () => {
     useRouter.mockImplementationOnce(() => ({
       route: '/About'
     }))
 
-    render(<Header/>);
-    const navElement = screen.getByText(/About/i);
+    render(<Footer/>);
+    const navElement = screen.getByText(/Bank Name/i);
     expect(navElement).toBeInTheDocument();
   })
 })

@@ -1,14 +1,33 @@
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import React from 'react';
 import Link from 'next/link';
 import NavbarItem from '@components/NavbarItem';
+// import MobileMenuIcon from '@icons/mobile-menu-icon.svg';
+// import MobileCloseMenuIcon from '@icons/mobile-close-menu-icon.svg';
+import styles from '@styles/Header.module.scss'
+
+type HeaderProps = {
+  location: string;
+  isOpen?: boolean;
+  setIsOpen?: Function;
+}
 
 
 function Header(){
+  const location = useRouter().asPath;
+  const [isOpen, setIsOpen]= useState<boolean>(false);
+
   return(
-    <div>
-      <h1>Header</h1>
-    </div>
+    <>
+    <GeneralHeader
+      location={location}
+    />
+    {/* <MobileHeader
+      location={location}
+      isOpen={isOpen}
+      setIsOpen={setIsOpen}
+    /> */}
+    </>
   )
 };
 
@@ -26,5 +45,103 @@ const HEADER_ROUTES_DICTIONARY = [
     text: 'Contact Info'
   }
 ];
+
+
+function GeneralHeader({
+  location,
+}: HeaderProps){
+  return(
+    <header className={styles.header}>
+      <div className={styles.headerWrapper}>
+        <Link href="/" passHref>
+        <div
+            className={styles.headerLink}
+          >
+            <div className={styles.headerLogo}>
+              <p className={styles.headerLogoImage}>BL</p>
+              <p className={styles.headerLogoTitle}>Bank Logo</p>
+            </div>
+          </div>
+        </Link>
+        <nav className={styles.headerNavBar}>
+          <ul className={styles.headerNavBarList}>
+            {HEADER_ROUTES_DICTIONARY.map((route, index) => (
+              <NavbarItem
+                key={`${route.text}-${index}`}
+                path={route.path}
+                text={route.text}
+                location={location}
+              />
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+// function MobileHeader({
+//   isOpen,
+//   setIsOpen,
+// }: HeaderProps){
+//   return(
+//     <div className={styles.mobileHeader}>
+//     <div
+//       className={styles.mobileHeaderWrapper}
+//     >
+//       <Link href="/" passHref>
+//         <div
+//           className={styles.mobileHeaderLink}
+//         >
+//           <div className={styles.mobileHeaderLogo}>
+//             <p className={styles.mobileHeaderLogoImage}>BL</p>
+//             <p className={styles.mobileHeaderLogoTitle}>Ulzahk</p>
+//           </div>
+//         </div>
+//       </Link>
+//       <div className={styles.mobileHeaderMenu}>
+//         {isOpen ? (
+//           <MobileCloseMenuIcon
+//             className={styles.mobileHeaderMenuIcon}
+//             onClick={() => {
+//               if(setIsOpen){
+//                 setIsOpen(false)
+//               }
+//             }}
+//           />
+//         ) : (
+//           <MobileMenuIcon
+//             className={ styles.mobileHeaderMenuIcon}
+//             onClick={() => {
+//               if(setIsOpen){
+//                 setIsOpen(true)
+//               }
+//             }}
+//           />
+//         )}
+//       </div>
+//     </div>
+//     <nav
+//       className={`${styles.mobileHeaderNavBar} ${
+//         isOpen ? styles.mobileHeaderNavBarOpen : null
+//       }`}
+//     >
+//       <ul
+//         className={styles.mobileHeaderNavBarList
+//         }
+//       >
+//         {HEADER_ROUTES_DICTIONARY.map((route, index) => (
+//           <NavbarItem
+//             key={`${route.text}-${index}`}
+//             path={route.path}
+//             text={route.text}
+//             setIsOpen={setIsOpen}
+//           />
+//         ))}
+//       </ul>
+//     </nav>
+//   </div>
+//   )
+// }
 
 export default Header;

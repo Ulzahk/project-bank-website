@@ -21,26 +21,26 @@ function NavbarItem({
   if(setIsOpen) {
     return(
       <Link href={path} passHref>
-        <a 
+        <div 
           className={styles.headerNavbarLink}
           onClick={() => setIsOpen(false)}
         >
           <li>{text}</li>
-        </a>
+        </div>
       </Link>
     )
   }
 
   return(
     <Link href={path} passHref>
-      <a 
+      <div 
         className={`
           ${styles.headerNavbarLink}
           ${actualPath ? styles.headerNavbarLinkFocused : null}
         `}
       >
         <li>{text}</li>
-      </a>
+      </div>
     </Link>
   )
 }

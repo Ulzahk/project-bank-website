@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import Header from '@components/Header';
+import Header from './Header';
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 

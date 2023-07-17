@@ -1,13 +1,6 @@
-const path = require('path');
-
-
 module.exports = {
-  process() {
-    return {
-      code: `module.exports = {};`,
-    };
-  },
-  getCacheKey() {
-    return 'svgTransform';
-  },
+  src: '/img.jgp',
+  height: 24,
+  width: 24,
+  blurDataURL: 'data:image/png;base64,imageData'
 };

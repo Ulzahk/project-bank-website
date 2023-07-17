@@ -1,0 +1,21 @@
+@import '@styles/Constants.scss';
+
+.headerNavbarLink {
+  height: 100%;
+  text-decoration: none;
+  list-style: none;
+  color: $gray-letters;
+  background-color: $white;
+  padding: 1.3rem 1rem 1rem 1rem;
+  border-bottom: 0.3rem solid transparent;
+  font-weight: bold;
+  font-size: 16px;
+  transition: opacity 0.1s;
+}
+.headerNavbarLink:hover {
+  opacity: 0.5;
+  border-bottom-color: $gray-letters;
+}
+.headerNavbarLinkFocused {
+  border-bottom-color: $gray-letters;
+}

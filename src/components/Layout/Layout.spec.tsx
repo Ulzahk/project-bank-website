@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import Layout from '@components/Layout';
+import Layout from './Layout';
 
 describe('Layout component', () => {
   it('renders a header', () => {

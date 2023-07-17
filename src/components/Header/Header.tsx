@@ -4,7 +4,7 @@ import Link from 'next/link';
 import NavbarItem from '@components/NavbarItem';
 // import MobileMenuIcon from '@icons/mobile-menu-icon.svg';
 // import MobileCloseMenuIcon from '@icons/mobile-close-menu-icon.svg';
-import styles from '@styles/Header.module.scss'
+import styles from './Header.module.scss'
 
 type HeaderProps = {
   location: string;

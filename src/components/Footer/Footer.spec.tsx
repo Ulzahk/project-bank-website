@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import Footer from '@components/Footer';
+import Footer from './Footer';
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 

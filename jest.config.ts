@@ -10,7 +10,8 @@ const config: Config = {
     '!**/index.ts',
     '!**/index.tsx',
     '!**/_app.tsx',
-    '!**/_document.tsx'
+    '!**/_document.tsx',
+    '!**/Document.tsx',
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/dist/',
@@ -26,10 +27,11 @@ const config: Config = {
   },
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.ts',
-    '^.+\\.svg$': '<rootDir>/src/__mocks__/svgTransform.js',
+    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
+    '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': '<rootDir>/src/__mocks__/fileMock.ts',
     '^@components(.*)$': '<rootDir>/src/components$1',
-    '^@images(.*)$': '<rootDir>/public/assets/images$1',
+    '^@images(.*)$': '<rootDir>/src/__mocks__/fileMock.ts',
+    '^@icons(.*)$': '<rootDir>/src/__mocks__/fileMock.ts',
     '^@pages(.*)$': '<rootDir>/src/pages$1',
   },
   testPathIgnorePatterns: ['node_modules', '.next', 'public'],

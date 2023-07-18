@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import NavbarItem from '@components/NavbarItem';
-// import MobileMenuIcon from '@icons/mobile-menu-icon.svg';
+import Image from '@components/Image';
+import MobileMenuIcon from '@icons/mobile-menu-icon.png';
 // import MobileCloseMenuIcon from '@icons/mobile-close-menu-icon.svg';
 import styles from './Header.module.scss'
 
@@ -50,6 +51,8 @@ const HEADER_ROUTES_DICTIONARY = [
 function GeneralHeader({
   location,
 }: HeaderProps){
+  const imageUrl = MobileMenuIcon;
+
   return(
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
@@ -58,6 +61,11 @@ function GeneralHeader({
             className={styles.headerLink}
           >
             <div className={styles.headerLogo}>
+              <Image
+                alt={'Test Image'}
+                src={MobileMenuIcon.src}
+                className='test'
+              />
               <p className={styles.headerLogoImage}>BL</p>
               <p className={styles.headerLogoTitle}>Bank Logo</p>
             </div>

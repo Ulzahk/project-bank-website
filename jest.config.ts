@@ -11,7 +11,6 @@ const config: Config = {
     '!**/index.tsx',
     '!**/_app.tsx',
     '!**/_document.tsx',
-    '!**/Document.tsx',
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/dist/',

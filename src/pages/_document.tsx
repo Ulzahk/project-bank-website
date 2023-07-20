@@ -1,3 +1,17 @@
-import Document from '@pages/Document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-export default Document;
+class AppDocument extends Document {
+  render() {
+    return (
+      <Html lang="en">
+        <Head></Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default AppDocument;

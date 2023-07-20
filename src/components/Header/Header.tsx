@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import NavbarItem from '@components/NavbarItem';
-import Image from '@components/Image';
+import Image from 'next/image'
 import MobileMenuIcon from '@icons/mobile-menu-icon.png';
-// import MobileCloseMenuIcon from '@icons/mobile-close-menu-icon.svg';
 import styles from './Header.module.scss'
 
 type HeaderProps = {
@@ -61,11 +60,11 @@ function GeneralHeader({
             className={styles.headerLink}
           >
             <div className={styles.headerLogo}>
-              <Image
+              {/* <Image
                 alt={'Test Image'}
                 src={MobileMenuIcon.src}
                 className='test'
-              />
+              /> */}
               <p className={styles.headerLogoImage}>BL</p>
               <p className={styles.headerLogoTitle}>Bank Logo</p>
             </div>

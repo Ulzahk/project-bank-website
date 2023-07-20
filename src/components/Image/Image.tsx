@@ -17,6 +17,8 @@ function Image({
       alt={alt}
       src={src}
       className={styles[className]}
+      width={60}
+      height={60}
     />
   );
 }

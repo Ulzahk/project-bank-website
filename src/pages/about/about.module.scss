@@ -1,0 +1,70 @@
+@import '@styles/Constants.scss';
+
+.About {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 3rem;
+  margin: 0 auto;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  max-width: $max-width-desktop;
+}
+
+.AboutCard{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: auto;
+  color: $black;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  gap: 1rem;
+}
+
+.DarkBackground{
+  background-color: $light-gray;
+} 
+
+.AboutCardTextWrapper{
+  max-width: 448px;
+}
+
+.AboutCardTextTitle{
+  text-align: center;
+  margin: 0;
+}
+
+.AboutCardImageWrapper{
+}
+
+.AboutCardImage{
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+@media only screen and (max-width: $max-width-table) {
+  .AboutCard{
+    flex-direction: column;
+    border-radius: 0;
+  } 
+
+  .AboutCardTextWrapper{
+    max-width: 90vw;
+  }
+
+  .AboutCardTextTitle{
+    margin: 0.5rem 0 1rem 0;
+  }
+}
+
+@media only screen and (max-width: $max-width-phone) {
+  .AboutCard{
+    padding: 1rem 1rem 1rem 1rem;
+  }
+
+  .AboutCardTextWrapper{
+    max-width: 88vw;
+  }
+}

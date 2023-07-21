@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Home from '@pages/index';
+import NotFound from '@pages/404';
 
-describe('Home page', () => {
+describe('404 Not Found page', () => {
   it('renders a header', () => {
-    render(<Home />);
-    const headerElement = screen.getByText(/Home/i);
+    render(<NotFound />);
+    const headerElement = screen.getByText(/Not Found/i);
     expect(headerElement).toBeInTheDocument();
   });
 });

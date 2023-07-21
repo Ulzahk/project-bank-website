@@ -1,0 +1,151 @@
+@import '@styles/Constants.scss';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: $white;
+  border-bottom: 1px solid $border-gray;
+}
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px;
+}
+.mobileHeader {
+  display: none;
+}
+.headerLink {
+  text-decoration: none;
+  color: $gray-letters;
+  transition: opacity 0.3s;
+}
+.headerLink:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+.headerLogo {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.headerLogoImage {
+  width: 50px;
+  height: 50px;
+}
+.headerLogoTitle {
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+  padding-left: 12px;
+}
+.headerNavbar {
+  height: 100%;
+}
+.headerNavbarList {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 465px) {
+  .header {
+    display: none;
+  }
+  .headerNavbarList {
+    display: none;
+  }
+  .mobileHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 60px;
+  }
+  .mobileHeaderWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: $white;
+    border-bottom: 1px solid $border-gray;
+  }
+  .mobileHeaderLink {
+    text-decoration: none;
+    color: $gray-letters;
+    transition: opacity 0.3s;
+  }
+  .mobileHeaderLink:hover {
+    text-decoration: none;
+    opacity: 0.7;
+  }
+  .mobileHeaderLogo {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  .mobileHeaderLogoImage {
+    width: 60px;
+    height: 60px;
+  }
+  .mobileHeaderLogoTitle {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .mobileHeaderMenu {
+    padding: 0 1rem 0 1rem;
+  }
+  .mobileHeaderMenuIcon {
+    width: 35px;
+    height: 35px;
+    fill: $gray-letters;
+  }
+  .mobileHeaderMenu:hover .mobileHeaderMenuIcon {
+    opacity: 0.5;
+  }
+  .mobileHeaderNavbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    z-index: 1;
+  }
+  .mobileHeaderNavbarOpen {
+    display: flex;
+    transition: 0.3s;
+  }
+  .mobileHeaderNavbarList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .mobileHeaderNavbarList a {
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    list-style: none;
+    color: $gray-letters;
+    background-color: $white;
+    padding: 20px 0px 20px 0px;
+    font-weight: bold;
+    font-size: 1.25rem;
+    transition: opacity 0.3s;
+    height: 100%;
+    border-bottom: 1px solid $border-gray;
+  }
+  .mobileHeaderNavbarList a:hover {
+    background-color: $light-gray;
+  }
+}

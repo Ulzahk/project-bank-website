@@ -26,7 +26,8 @@
       "@pages/*": ["src/pages/*"],
       "@content/*": ["content/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@images/*": ["src/assets/images/*"],
+      "@images/*": ["public/assets/images/*"],
+      "@icons/*": ["public/assets/icons/*"],
       "@styles/*": ["src/styles/*"]
     }
   },

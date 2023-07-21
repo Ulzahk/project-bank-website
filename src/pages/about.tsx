@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '@components/Layout';
-import AboutPartnership from '@images/about-partnership.jpg'
-import AboutCustomerFocus from '@images/about-customer-focus.jpg';
-import AboutCommunity from '@images/about-community.jpg';
+import AboutPartnership from '@images/about-partnership.png'
+import AboutCustomerFocus from '@images/about-customer-focus.png';
+import AboutCommunity from '@images/about-community.png';
 import Image from 'next/image'
 import styles from '@styles/about.module.scss';
 

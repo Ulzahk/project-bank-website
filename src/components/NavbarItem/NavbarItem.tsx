@@ -20,9 +20,14 @@ function NavbarItem({
 
   if(setIsOpen) {
     return(
-      <Link href={path} passHref>
+      <Link
+        href={path}
+        passHref
+        className={styles.NavbarItemLink}
+        onClick={() => setIsOpen(false)}
+      >
         <div 
-          className={styles.headerNavbarLink}
+          className={styles.NavbarItemLink}
           onClick={() => setIsOpen(false)}
         >
           <li>{text}</li>
@@ -32,15 +37,14 @@ function NavbarItem({
   }
 
   return(
-    <Link href={path} passHref>
-      <div 
-        className={`
-          ${styles.headerNavbarLink}
-          ${actualPath ? styles.headerNavbarLinkFocused : null}
-        `}
-      >
+    <Link 
+      href={path}
+      passHref
+      className={`
+        ${styles.NavbarItemLink}
+        ${actualPath ? styles.NavbarItemLinkFocused : null}
+      `}>
         <li>{text}</li>
-      </div>
     </Link>
   )
 }

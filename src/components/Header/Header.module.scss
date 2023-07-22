@@ -1,128 +1,151 @@
 @import '@styles/Constants.scss';
 
-.header {
+.Header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 3.75rem;
   background-color: $white;
-  border-bottom: 1px solid $border-gray;
+  box-shadow: 0 0.20rem 0.75rem 0px rgba(0, 0, 0, .16);
 }
-.headerWrapper {
+
+.HeaderWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1024px;
+  max-width: $max-width-desktop;
 }
-.mobileHeader {
-  display: none;
-}
-.headerLink {
+
+.HeaderLink {
   text-decoration: none;
-  color: $gray-letters;
+  color: $black;
   transition: opacity 0.3s;
 }
-.headerLink:hover {
+
+.HeaderLink:hover {
   text-decoration: none;
   opacity: 0.7;
 }
-.headerLogo {
+
+.HeaderLogo {
   display: flex;
   align-items: center;
   justify-items: center;
 }
-.headerLogoImage {
-  width: 50px;
-  height: 50px;
+
+.HeaderLogoImage {
+  width: 3rem;
+  height: 3rem;
 }
-.headerLogoTitle {
+
+.HeaderLogoTitle {
   margin: 0;
-  font-size: 36px;
+  font-size: 2rem;
   font-weight: bold;
-  padding-left: 12px;
+  padding-left: 0.75rem;
+  text-decoration: none;
 }
-.headerNavbar {
+
+.HeaderNavbar {
   height: 100%;
 }
-.headerNavbarList {
+
+.HeaderNavbarList {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-items: center;
   margin: 0;
   padding: 0;
 }
 
-@media only screen and (max-width: 465px) {
-  .header {
+.MobileHeader {
+  display: none;
+}
+
+@media only screen and (max-width: $max-width-phone) {
+  .Header {
     display: none;
   }
-  .headerNavbarList {
+  .HeaderNavbarList {
     display: none;
   }
-  .mobileHeader {
+
+  .MobileHeader {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-content: space-between;
-    height: 60px;
+    height: 2.75rem;
   }
-  .mobileHeaderWrapper {
+
+  .MobileHeaderWrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 2.75rem;
     background-color: $white;
-    border-bottom: 1px solid $border-gray;
+    padding: 0.5rem 0 0.5rem 0;
+    box-shadow: 0 0.20rem 0.75rem 0px rgba(0, 0, 0, .16);
   }
-  .mobileHeaderLink {
+
+  .MobileHeaderLink {
     text-decoration: none;
-    color: $gray-letters;
+    color: $black;
     transition: opacity 0.3s;
   }
-  .mobileHeaderLink:hover {
+
+  .MobileHeaderLink:hover {
     text-decoration: none;
     opacity: 0.7;
   }
-  .mobileHeaderLogo {
+
+  .MobileHeaderLogo {
     display: flex;
     align-items: center;
     justify-items: center;
+    padding-left: 1rem;
   }
-  .mobileHeaderLogoImage {
-    width: 60px;
-    height: 60px;
+
+  .MobileHeaderLogoImage {
+    width: 2.3rem;
+    height: 2.3rem;
   }
-  .mobileHeaderLogoTitle {
+
+  .MobileHeaderLogoTitle {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
     font-weight: bold;
   }
-  .mobileHeaderMenu {
+
+  .MobileHeaderMenu {
+    display: flex;
     padding: 0 1rem 0 1rem;
   }
-  .mobileHeaderMenuIcon {
-    width: 35px;
-    height: 35px;
-    fill: $gray-letters;
+
+  .MobileHeaderMenuIcon {
+    width: 2rem;
+    height: 2rem;
   }
-  .mobileHeaderMenu:hover .mobileHeaderMenuIcon {
-    opacity: 0.5;
-  }
-  .mobileHeaderNavbar {
+
+  .MobileHeaderNavbar {
     display: none;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     z-index: 1;
   }
-  .mobileHeaderNavbarOpen {
+
+  .MobileHeaderNavbarOpen {
     display: flex;
     transition: 0.3s;
   }
-  .mobileHeaderNavbarList {
+
+  .MobileHeaderNavbarList {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -131,21 +154,23 @@
     margin: 0;
     padding: 0;
   }
-  .mobileHeaderNavbarList a {
+
+  .MobileHeaderNavbarList a {
     text-align: center;
     width: 100%;
     text-decoration: none;
     list-style: none;
     color: $gray-letters;
     background-color: $white;
-    padding: 20px 0px 20px 0px;
+    padding: 1.25rem 0px 1.25rem 0px;
     font-weight: bold;
     font-size: 1.25rem;
     transition: opacity 0.3s;
     height: 100%;
     border-bottom: 1px solid $border-gray;
   }
-  .mobileHeaderNavbarList a:hover {
-    background-color: $light-gray;
+
+  .MobileHeaderNavbarList a:hover {
+    background-color: $white;
   }
 }

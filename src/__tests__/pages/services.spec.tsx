@@ -1,17 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import About from '@pages/about';
+import Services from '@pages/services';
 
 jest.mock('next/router', () => ({
   useRouter: () => ({
-    route: '/about',
+    route: '/services',
   }),
 }));
 
-describe('About page', () => {
+describe('Services page', () => {
   it('renders a section element', () => {
-    const { container } = render(<About/>)
-    const sectionElement = container.getElementsByClassName('About');
+    const { container } = render(<Services />);
+    const sectionElement = container.getElementsByClassName('Services');
     expect(sectionElement.length).toBe(1);
-  })
-})
+  });
+});

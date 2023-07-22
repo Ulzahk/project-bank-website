@@ -1,21 +1,36 @@
 @import '@styles/Constants.scss';
 
-.headerNavbarLink {
+.NavbarItemLink {
   height: 100%;
   text-decoration: none;
   list-style: none;
-  color: $gray-letters;
+  color: $black;
   background-color: $white;
-  padding: 1.3rem 1rem 1rem 1rem;
+  padding: 1.1rem 1rem 1rem 1rem;
   border-bottom: 0.3rem solid transparent;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1rem;
   transition: opacity 0.1s;
 }
-.headerNavbarLink:hover {
-  opacity: 0.5;
-  border-bottom-color: $gray-letters;
+
+.NavbarItemLink:hover {
+  border-bottom-color: $black;
 }
-.headerNavbarLinkFocused {
-  border-bottom-color: $gray-letters;
+
+.NavbarItemLinkFocused {
+  border-bottom-color: $black;
+}
+
+@media only screen and (max-width: $max-width-phone) {
+  .NavbarItemLink {
+    padding: 0 0 0 0;
+  }
+
+  .NavbarItemLink:hover {
+    border-bottom-color: transparent;
+  }
+
+  .NavbarItemLinkFocused {
+    border-bottom-color: transparent;
+  }
 }

@@ -2,18 +2,18 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import Layout from './Layout';
 
-const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+jest.mock('next/router', () => ({
+  useRouter: () => ({
+    route: '/about',
+  }),
+}));
 
 describe('Layout component', () => {
   it('renders a header and a footer', () => {
-    useRouter.mockImplementationOnce(() => ({
-      route: '/'
-    }))
-
-    render(<Layout />);
-    const headerElement = screen.getByText(/About/i);
-    const footerElement = screen.getByText(/Bank Name/i);
-    expect(headerElement).toBeInTheDocument();
-    expect(footerElement).toBeInTheDocument();
+    const { container } = render(<Layout />);
+    const headerElement = container.getElementsByClassName('Header');
+    const footerElement = container.getElementsByClassName('footer');
+    expect(headerElement.length).toBe(1);
+    expect(footerElement.length).toBe(1);
   });
 });

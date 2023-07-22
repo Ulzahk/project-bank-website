@@ -3,7 +3,9 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import NavbarItem from '@components/NavbarItem';
 import Image from 'next/image'
+import NexusUnityBankLogo from '@images/nexus-unity-bank-logo.png';
 import MobileMenuIcon from '@icons/mobile-menu-icon.png';
+import MobileCloseMenuIcon from '@icons/mobile-close-menu-icon.png';
 import styles from './Header.module.scss'
 
 type HeaderProps = {
@@ -22,11 +24,11 @@ function Header(){
     <GeneralHeader
       location={location}
     />
-    {/* <MobileHeader
+    <MobileHeader
       location={location}
       isOpen={isOpen}
       setIsOpen={setIsOpen}
-    /> */}
+    />
     </>
   )
 };
@@ -47,31 +49,26 @@ const HEADER_ROUTES_DICTIONARY = [
 ];
 
 
-function GeneralHeader({
+export function GeneralHeader({
   location,
 }: HeaderProps){
-  const imageUrl = MobileMenuIcon;
-
   return(
-    <header className={styles.header}>
-      <div className={styles.headerWrapper}>
-        <Link href="/" passHref>
-        <div
-            className={styles.headerLink}
-          >
-            <div className={styles.headerLogo}>
-              {/* <Image
-                alt={'Test Image'}
-                src={MobileMenuIcon.src}
-                className='test'
-              /> */}
-              <p className={styles.headerLogoImage}>BL</p>
-              <p className={styles.headerLogoTitle}>Bank Logo</p>
+    <header data-testid="general-header" className={styles.Header}>
+      <div className={styles.HeaderWrapper}>
+        <Link href="/" passHref className={styles.HeaderLink}>
+            <div className={styles.HeaderLogo}>
+            <Image 
+              alt='Nexus Unity Bank logo'
+              src={NexusUnityBankLogo.src}
+              className={styles.HeaderLogoImage}
+              width={50}
+              height={50}
+            />
+              <p className={styles.HeaderLogoTitle}>Nexus Unity Bank</p>
             </div>
-          </div>
         </Link>
-        <nav className={styles.headerNavBar}>
-          <ul className={styles.headerNavBarList}>
+        <nav className={styles.HeaderNavbar}>
+          <ul className={styles.HeaderNavbarList}>
             {HEADER_ROUTES_DICTIONARY.map((route, index) => (
               <NavbarItem
                 key={`${route.text}-${index}`}
@@ -87,68 +84,78 @@ function GeneralHeader({
   )
 }
 
-// function MobileHeader({
-//   isOpen,
-//   setIsOpen,
-// }: HeaderProps){
-//   return(
-//     <div className={styles.mobileHeader}>
-//     <div
-//       className={styles.mobileHeaderWrapper}
-//     >
-//       <Link href="/" passHref>
-//         <div
-//           className={styles.mobileHeaderLink}
-//         >
-//           <div className={styles.mobileHeaderLogo}>
-//             <p className={styles.mobileHeaderLogoImage}>BL</p>
-//             <p className={styles.mobileHeaderLogoTitle}>Ulzahk</p>
-//           </div>
-//         </div>
-//       </Link>
-//       <div className={styles.mobileHeaderMenu}>
-//         {isOpen ? (
-//           <MobileCloseMenuIcon
-//             className={styles.mobileHeaderMenuIcon}
-//             onClick={() => {
-//               if(setIsOpen){
-//                 setIsOpen(false)
-//               }
-//             }}
-//           />
-//         ) : (
-//           <MobileMenuIcon
-//             className={ styles.mobileHeaderMenuIcon}
-//             onClick={() => {
-//               if(setIsOpen){
-//                 setIsOpen(true)
-//               }
-//             }}
-//           />
-//         )}
-//       </div>
-//     </div>
-//     <nav
-//       className={`${styles.mobileHeaderNavBar} ${
-//         isOpen ? styles.mobileHeaderNavBarOpen : null
-//       }`}
-//     >
-//       <ul
-//         className={styles.mobileHeaderNavBarList
-//         }
-//       >
-//         {HEADER_ROUTES_DICTIONARY.map((route, index) => (
-//           <NavbarItem
-//             key={`${route.text}-${index}`}
-//             path={route.path}
-//             text={route.text}
-//             setIsOpen={setIsOpen}
-//           />
-//         ))}
-//       </ul>
-//     </nav>
-//   </div>
-//   )
-// }
+export function MobileHeader({
+  isOpen,
+  setIsOpen,
+}: HeaderProps){
+  return(
+    <div data-testid="mobile-header" className={styles.MobileHeader}>
+    <div
+      className={styles.MobileHeaderWrapper}
+    >
+      <Link href="/" passHref className={styles.MobileHeaderLink}>
+        <div className={styles.MobileHeaderLogo}>
+          <Image 
+            alt='Nexus Unity Bank logo'
+            src={NexusUnityBankLogo.src}
+            className={styles.MobileHeaderLogoImage}
+            width={50}
+            height={50}
+          />
+          <p className={styles.MobileHeaderLogoTitle}>Nexus Unity Bank</p>
+        </div>
+      </Link>
+      <div className={styles.MobileHeaderMenu}>
+        {isOpen ? (
+          <Image 
+            alt='Mobile header close menu icon'
+            src={MobileCloseMenuIcon.src}
+            className={styles.MobileHeaderMenuIcon}
+            width={50}
+            height={50}
+            onClick={() => {
+              if(setIsOpen){
+                setIsOpen(false)
+              }
+            }}
+          />
+        ) : (
+          <Image 
+            alt='Mobile header menu icon'
+            src={MobileMenuIcon.src}
+            className={styles.MobileHeaderMenuIcon}
+            width={50}
+            height={50}
+            onClick={() => {
+              if(setIsOpen){
+                setIsOpen(true)
+              }
+            }}
+          />
+        )}
+      </div>
+    </div>
+    <nav
+      className={`${styles.MobileHeaderNavbar} ${
+        isOpen ? styles.MobileHeaderNavbarOpen : null
+      }`}
+    >
+      <ul
+        className={styles.MobileHeaderNavbarList
+        }
+      >
+        {HEADER_ROUTES_DICTIONARY.map((route, index) => (
+          <NavbarItem
+            key={`${route.text}-${index}`}
+            path={route.path}
+            text={route.text}
+            setIsOpen={setIsOpen}
+          />
+        ))}
+      </ul>
+    </nav>
+  </div>
+  )
+}
 
 export default Header;

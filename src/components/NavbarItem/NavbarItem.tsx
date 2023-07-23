@@ -10,43 +10,36 @@ type NavBarItemProps = {
   location?: string;
 };
 
-function NavbarItem({
-  path,
-  text,
-  setIsOpen,
-  location,
-}: NavBarItemProps){
+function NavbarItem({ path, text, setIsOpen, location }: NavBarItemProps) {
   const actualPath = location === path || false;
 
-  if(setIsOpen) {
-    return(
+  if (setIsOpen) {
+    return (
       <Link
         href={path}
         passHref
         className={styles.NavbarItemLink}
         onClick={() => setIsOpen(false)}
       >
-        <div 
-          className={styles.NavbarItemLink}
-          onClick={() => setIsOpen(false)}
-        >
+        <div className={styles.NavbarItemLink} onClick={() => setIsOpen(false)}>
           <li>{text}</li>
         </div>
       </Link>
-    )
+    );
   }
 
-  return(
-    <Link 
+  return (
+    <Link
       href={path}
       passHref
       className={`
         ${styles.NavbarItemLink}
         ${actualPath ? styles.NavbarItemLinkFocused : null}
-      `}>
-        <li>{text}</li>
+      `}
+    >
+      <li>{text}</li>
     </Link>
-  )
+  );
 }
 
 export default NavbarItem;

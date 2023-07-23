@@ -10,7 +10,7 @@
   max-width: $max-width-desktop;
 }
 
-.AboutCard{
+.AboutCard {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,49 +22,49 @@
   gap: 1rem;
 }
 
-.DarkBackground{
+.DarkBackground {
   background-color: $light-gray;
-} 
+}
 
-.AboutCardTextWrapper{
+.AboutCardTextWrapper {
   max-width: 448px;
 }
 
-.AboutCardTextTitle{
+.AboutCardTextTitle {
   text-align: center;
   margin: 0;
 }
 
-.AboutCardImageWrapper{
+.AboutCardImageWrapper {
 }
 
-.AboutCardImage{
+.AboutCardImage {
   width: 100%;
   height: auto;
   border-radius: 0.75rem;
 }
 
 @media only screen and (max-width: $max-width-table) {
-  .AboutCard{
+  .AboutCard {
     flex-direction: column;
     border-radius: 0;
-  } 
+  }
 
-  .AboutCardTextWrapper{
+  .AboutCardTextWrapper {
     max-width: 90vw;
   }
 
-  .AboutCardTextTitle{
+  .AboutCardTextTitle {
     margin: 0.5rem 0 1rem 0;
   }
 }
 
 @media only screen and (max-width: $max-width-phone) {
-  .AboutCard{
+  .AboutCard {
     padding: 1rem 1rem 1rem 1rem;
   }
 
-  .AboutCardTextWrapper{
+  .AboutCardTextWrapper {
     max-width: 88vw;
   }
 }

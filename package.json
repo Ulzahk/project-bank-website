@@ -10,7 +10,8 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "format": "npx prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -33,9 +34,16 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "babel-jest": "^29.6.1",
+    "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
+    "prettier": "^3.0.0",
     "ts-node": "^10.9.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx prettier --write ."
+    }
   }
 }

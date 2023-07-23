@@ -21,7 +21,9 @@ describe('NavbarItem component', () => {
 
   it('renders a link with setIsOpen prop', () => {
     const setIsOpenMock = jest.fn();
-    const { getByRole } = render(<NavbarItem {...defaultProps} setIsOpen={setIsOpenMock} />);
+    const { getByRole } = render(
+      <NavbarItem {...defaultProps} setIsOpen={setIsOpenMock} />,
+    );
     const linkElement = getByRole('link');
 
     expect(linkElement.tagName).toBe('A');
@@ -34,7 +36,9 @@ describe('NavbarItem component', () => {
   });
 
   it('renders a link with actualPath true', () => {
-    const { getByRole } = render(<NavbarItem {...defaultProps} location="/path" />);
+    const { getByRole } = render(
+      <NavbarItem {...defaultProps} location="/path" />,
+    );
     const linkElement = getByRole('link');
 
     expect(linkElement).toHaveClass('NavbarItemLinkFocused');

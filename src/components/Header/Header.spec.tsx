@@ -65,7 +65,13 @@ describe('MobileHeader component', () => {
     const isOpen = true;
     const location = '/about';
 
-    render(<MobileHeader location={location} isOpen={isOpen} setIsOpen={setIsOpenMock} />);
+    render(
+      <MobileHeader
+        location={location}
+        isOpen={isOpen}
+        setIsOpen={setIsOpenMock}
+      />,
+    );
 
     const mobileHeader = screen.getByTestId('mobile-header');
     expect(mobileHeader).toBeInTheDocument();
@@ -88,23 +94,29 @@ describe('MobileHeader component', () => {
       const setIsOpenMock = jest.fn();
       const isOpen = false;
       const location = '/about';
-  
-      render(<MobileHeader location={location} isOpen={isOpen} setIsOpen={setIsOpenMock} />);
-  
+
+      render(
+        <MobileHeader
+          location={location}
+          isOpen={isOpen}
+          setIsOpen={setIsOpenMock}
+        />,
+      );
+
       const mobileHeader = screen.getByTestId('mobile-header');
       expect(mobileHeader).toBeInTheDocument();
-  
+
       const logoImage = screen.getByAltText('Nexus Unity Bank logo');
       expect(logoImage).toBeInTheDocument();
-  
+
       const logoTitle = screen.getByText('Nexus Unity Bank');
       expect(logoTitle).toBeInTheDocument();
-  
+
       const menuIcon = screen.getByAltText('Mobile header menu icon');
       expect(menuIcon).toBeInTheDocument();
-  
+
       fireEvent.click(menuIcon);
       expect(setIsOpenMock).toHaveBeenCalled();
     });
-  })
+  });
 });

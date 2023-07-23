@@ -8,11 +8,11 @@ jest.mock('next/router', () => ({
   }),
 }));
 
-describe('Footer component', () =>{
+describe('Footer component', () => {
   it('renders Footer component', () => {
-    render(<Footer/>);
+    render(<Footer />);
 
-    const footer = screen.getByTestId('footer')
+    const footer = screen.getByTestId('footer');
     expect(footer).toBeInTheDocument();
 
     const logoImage = screen.getByAltText('Nexus Unity Bank logo');
@@ -20,5 +20,5 @@ describe('Footer component', () =>{
 
     const creditLink = screen.getByTestId('credit-link');
     expect(creditLink).toBeInTheDocument();
-  })
-})
+  });
+});

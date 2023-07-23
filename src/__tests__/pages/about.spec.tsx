@@ -10,8 +10,8 @@ jest.mock('next/router', () => ({
 
 describe('About page', () => {
   it('renders a section element', () => {
-    const { container } = render(<About/>)
+    const { container } = render(<About />);
     const sectionElement = container.getElementsByClassName('About');
     expect(sectionElement.length).toBe(1);
-  })
-})
+  });
+});

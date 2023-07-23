@@ -7,7 +7,7 @@
   align-items: center;
   height: 3.75rem;
   background-color: $white;
-  box-shadow: 0 0.20rem 0.75rem 0px rgba(0, 0, 0, .16);
+  box-shadow: 0 0.2rem 0.75rem 0 rgba(0, 0, 0, 0.16);
 }
 
 .HeaderWrapper {
@@ -65,6 +65,12 @@
   display: none;
 }
 
+@media only screen and (max-width: $max-width-table) {
+  .HeaderWrapper {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
 @media only screen and (max-width: $max-width-phone) {
   .Header {
     display: none;
@@ -89,7 +95,7 @@
     height: 2.75rem;
     background-color: $white;
     padding: 0.5rem 0 0.5rem 0;
-    box-shadow: 0 0.20rem 0.75rem 0px rgba(0, 0, 0, .16);
+    box-shadow: 0 0.2rem 0.75rem 0px rgba(0, 0, 0, 0.16);
   }
 
   .MobileHeaderLink {
@@ -116,10 +122,8 @@
   }
 
   .MobileHeaderLogoTitle {
-    margin: 0;
     font-size: 1rem;
     padding-left: 0.5rem;
-    font-weight: bold;
   }
 
   .MobileHeaderMenu {

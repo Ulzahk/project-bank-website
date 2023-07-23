@@ -1,0 +1,9 @@
+.cache
+package.json
+package-lock.json
+public
+*.html
+node_modules/
+dist/
+.next/
+coverage/

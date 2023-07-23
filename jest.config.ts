@@ -12,10 +12,7 @@ const config: Config = {
     '!**/_app.tsx',
     '!**/_document.tsx',
   ],
-  coveragePathIgnorePatterns: [
-    '<rootDir>/dist/',
-    '<rootDir>/node_modules/',
-  ],
+  coveragePathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/'],
   coverageThreshold: {
     global: {
       branches: 60,
@@ -27,7 +24,8 @@ const config: Config = {
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
-    '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': '<rootDir>/src/__mocks__/fileMock.ts',
+    '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i':
+      '<rootDir>/src/__mocks__/fileMock.ts',
     '^@components(.*)$': '<rootDir>/src/components$1',
     '^@images(.*)$': '<rootDir>/src/__mocks__/fileMock.ts',
     '^@icons(.*)$': '<rootDir>/src/__mocks__/fileMock.ts',
@@ -42,7 +40,7 @@ const config: Config = {
     '/node_modules/',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };
 
 export default config;

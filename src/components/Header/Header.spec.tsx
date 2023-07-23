@@ -1,9 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Header, { GeneralHeader, MobileHeader } from './Header';
-import NexusUnityBankLogo from '@images/nexus-unity-bank-logo.png';
-import MobileMenuIcon from '@icons/mobile-menu-icon.png';
-import MobileCloseMenuIcon from '@icons/mobile-close-menu-icon.png';
 
 jest.mock('next/router', () => ({
   useRouter: () => ({

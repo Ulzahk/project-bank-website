@@ -2,16 +2,23 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import Footer from './Footer';
 
-const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+jest.mock('next/router', () => ({
+  useRouter: () => ({
+    route: '/about',
+  }),
+}));
 
 describe('Footer component', () =>{
-  it('should render a nav element', () => {
-    useRouter.mockImplementationOnce(() => ({
-      route: '/About'
-    }))
-
+  it('renders Footer component', () => {
     render(<Footer/>);
-    const navElement = screen.getByText(/Bank Name/i);
-    expect(navElement).toBeInTheDocument();
+
+    const footer = screen.getByTestId('footer')
+    expect(footer).toBeInTheDocument();
+
+    const logoImage = screen.getByAltText('Nexus Unity Bank logo');
+    expect(logoImage).toBeInTheDocument();
+
+    const creditLink = screen.getByTestId('credit-link');
+    expect(creditLink).toBeInTheDocument();
   })
 })

@@ -12,7 +12,7 @@ describe('Layout component', () => {
   it('renders a header and a footer', () => {
     const { container } = render(<Layout />);
     const headerElement = container.getElementsByClassName('Header');
-    const footerElement = container.getElementsByClassName('footer');
+    const footerElement = container.getElementsByClassName('Footer');
     expect(headerElement.length).toBe(1);
     expect(footerElement.length).toBe(1);
   });

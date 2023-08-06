@@ -11,15 +11,6 @@ function About() {
     <Layout>
       <section className={styles.About}>
         <div className={styles.AboutCard}>
-          <div className={styles.AboutCardImageWrapper}>
-            <Image
-              alt="group of 4 persons, two of them shaking hands"
-              src={AboutPartnership.src}
-              className={styles.AboutCardImage}
-              width={640}
-              height={427}
-            />
-          </div>
           <div className={styles.AboutCardTextWrapper}>
             <h2 className={styles.AboutCardTextTitle}>
               Your Trusted Financial Partner
@@ -43,8 +34,26 @@ function About() {
               tailored to meet your unique needs.
             </p>
           </div>
+          <div className={styles.AboutCardImageWrapper}>
+            <Image
+              alt="group of 4 persons, two of them shaking hands"
+              src={AboutPartnership.src}
+              className={styles.AboutCardImage}
+              width={640}
+              height={427}
+            />
+          </div>
         </div>
         <div className={`${styles.AboutCard} ${styles.DarkBackground}`}>
+          <div className={styles.AboutCardImageWrapper}>
+            <Image
+              alt="two women sitting chatting, one of them holding a gray laptop"
+              src={AboutCustomerFocus.src}
+              className={styles.AboutCardImage}
+              width={640}
+              height={427}
+            />
+          </div>
           <div className={styles.AboutCardTextWrapper}>
             <h2 className={styles.AboutCardTextTitle}>
               Why Choose Nexus Unity Bank? Here Is What Sets Us Apart
@@ -70,26 +79,8 @@ function About() {
               </li>
             </ul>
           </div>
-          <div className={styles.AboutCardImageWrapper}>
-            <Image
-              alt="two women sitting chatting, one of them holding a gray laptop"
-              src={AboutCustomerFocus.src}
-              className={styles.AboutCardImage}
-              width={640}
-              height={427}
-            />
-          </div>
         </div>
         <div className={styles.AboutCard}>
-          <div className={styles.AboutCardImageWrapper}>
-            <Image
-              alt="group of persons sitting at the park in a sunny day"
-              src={AboutCommunity.src}
-              className={styles.AboutCardImage}
-              width={640}
-              height={427}
-            />
-          </div>
           <div className={styles.AboutCardTextWrapper}>
             <h2 className={styles.AboutCardTextTitle}>Community Commitment</h2>
             <p>
@@ -105,6 +96,15 @@ function About() {
               branches, or contact our dedicated customer service team to
               experience the Nexus Unity Bank difference firsthand.
             </p>
+          </div>
+          <div className={styles.AboutCardImageWrapper}>
+            <Image
+              alt="group of persons sitting at the park in a sunny day"
+              src={AboutCommunity.src}
+              className={styles.AboutCardImage}
+              width={640}
+              height={427}
+            />
           </div>
         </div>
       </section>

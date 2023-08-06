@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-$white: #ffffff;
 $black: #000000;
-$gray-letters: #4b5567;
-$gray-label: #8a8a8d;
-$light-gray: #e4e5e8;
 $border-gray: #dadce0;
-$theme-font: 'Open Sans', sans-serif;
+$gray-label: #8a8a8d;
+$gray-letters: #4b5567;
+$inactive-secondary-background-color: #e4e5e8;
+$inactive-secondary-text-color: #4b5567;
+$light-gray: #e4e5e8;
+$main-background-color: #0d5c65;
+$main-text-color: #ffffff;
 $max-width-desktop: 1024px;
-$max-width-table: 912px;
 $max-width-phone: 540px;
+$max-width-table: 912px;
+$secondary-background-color: #f4927c;
+$secondary-text-color: #000000;
+$theme-font: 'Open Sans', sans-serif;
+$white: #ffffff;

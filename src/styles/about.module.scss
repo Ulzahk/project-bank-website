@@ -16,14 +16,15 @@
   align-items: center;
   justify-content: center;
   max-width: auto;
-  color: $black;
+  color: $secondary-text-color;
   border-radius: 0.75rem;
   padding: 1.5rem 1rem 1.5rem 1rem;
   gap: 1rem;
 }
 
 .DarkBackground {
-  background-color: $light-gray;
+  background-color: $main-background-color;
+  color: $main-text-color;
 }
 
 .AboutCardTextWrapper {

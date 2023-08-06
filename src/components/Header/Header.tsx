@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import NavbarItem from '@components/NavbarItem';
 import Image from 'next/image';
-import NexusUnityBankLogo from '@images/nexus-unity-bank-logo.png';
-import MobileMenuIcon from '@icons/mobile-menu-icon.png';
-import MobileCloseMenuIcon from '@icons/mobile-close-menu-icon.png';
+import NexusUnityBankLogo from '@icons/nexus-unity-bank-logo-light.png';
+import MobileMenuIcon from '@icons/menu-icon-light.png';
+import MobileCloseMenuIcon from '@icons/close-menu-icon-light.png';
 import styles from './Header.module.scss';
 
 type HeaderProps = {
@@ -123,8 +123,7 @@ export function MobileHeader({ isOpen, setIsOpen }: HeaderProps) {
       <nav
         className={`${styles.MobileHeaderNavbar} ${
           isOpen ? styles.MobileHeaderNavbarOpen : null
-        }`}
-      >
+        }`}>
         <ul className={styles.MobileHeaderNavbarList}>
           {HEADER_ROUTES_DICTIONARY.map((route, index) => (
             <NavbarItem

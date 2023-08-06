@@ -4,8 +4,8 @@
   height: 100%;
   text-decoration: none;
   list-style: none;
-  color: $black;
-  background-color: $white;
+  color: $main-text-color;
+  background-color: $main-background-color;
   padding: 1.1rem 1rem 1rem 1rem;
   border-bottom: 0.3rem solid transparent;
   font-weight: bold;
@@ -14,11 +14,11 @@
 }
 
 .NavbarItemLink:hover {
-  border-bottom-color: $black;
+  border-bottom-color: $main-text-color;
 }
 
 .NavbarItemLinkFocused {
-  border-bottom-color: $black;
+  border-bottom-color: $main-text-color;
 }
 
 @media only screen and (max-width: $max-width-phone) {

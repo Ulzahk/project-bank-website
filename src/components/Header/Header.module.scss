@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   height: 3.75rem;
-  background-color: $white;
+  background-color: $main-background-color;
   box-shadow: 0 0.2rem 0.75rem 0 rgba(0, 0, 0, 0.16);
 }
 
@@ -20,7 +20,7 @@
 
 .HeaderLink {
   text-decoration: none;
-  color: $black;
+  color: $main-text-color;
   transition: opacity 0.3s;
 }
 
@@ -93,14 +93,14 @@
     justify-content: space-between;
     align-items: center;
     height: 2.75rem;
-    background-color: $white;
+    background-color: $main-background-color;
     padding: 0.5rem 0 0.5rem 0;
     box-shadow: 0 0.2rem 0.75rem 0px rgba(0, 0, 0, 0.16);
   }
 
   .MobileHeaderLink {
     text-decoration: none;
-    color: $black;
+    color: $main-text-color;
     transition: opacity 0.3s;
   }
 
@@ -124,6 +124,7 @@
   .MobileHeaderLogoTitle {
     font-size: 1rem;
     padding-left: 0.5rem;
+    color: $main-text-color;
   }
 
   .MobileHeaderMenu {
@@ -164,17 +165,16 @@
     width: 100%;
     text-decoration: none;
     list-style: none;
-    color: $gray-letters;
-    background-color: $white;
+    color: $main-text-color;
+    background-color: $main-background-color;
     padding: 1.25rem 0px 1.25rem 0px;
     font-weight: bold;
     font-size: 1.25rem;
     transition: opacity 0.3s;
     height: 100%;
-    border-bottom: 1px solid $border-gray;
   }
 
   .MobileHeaderNavbarList a:hover {
-    background-color: $white;
+    background-color: $main-background-color;
   }
 }

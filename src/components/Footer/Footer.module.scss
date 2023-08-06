@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 -0.2rem 0.75rem 0 rgba(0, 0, 0, 0.16);
+  background-color: $main-background-color;
 }
 
 .FooterWrapper {
@@ -19,7 +20,7 @@
 
 .FooterLink {
   text-decoration: none;
-  color: $black;
+  color: $main-text-color;
   transition: opacity 0.3s;
 }
 
@@ -58,7 +59,7 @@
 
 .FooterListItemLink {
   text-decoration: underline;
-  color: $black;
+  color: $main-text-color;
   font-size: 1.125rem;
   transition: text-decoration 0.3s;
 }

@@ -30,6 +30,7 @@ const config: Config = {
     '^@images(.*)$': '<rootDir>/src/__mocks__/fileMock.ts',
     '^@icons(.*)$': '<rootDir>/src/__mocks__/fileMock.ts',
     '^@pages(.*)$': '<rootDir>/src/pages$1',
+    '^@utils(.*)$': '<rootDir>/src/utils$1',
   },
   testPathIgnorePatterns: ['node_modules', '.next', 'public'],
   testEnvironment: 'jsdom',

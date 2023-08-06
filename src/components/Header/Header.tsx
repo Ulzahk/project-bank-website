@@ -6,6 +6,7 @@ import Image from 'next/image';
 import NexusUnityBankLogo from '@icons/nexus-unity-bank-logo-light.png';
 import MobileMenuIcon from '@icons/menu-icon-light.png';
 import MobileCloseMenuIcon from '@icons/close-menu-icon-light.png';
+import { HEADER_ROUTES_DICTIONARY } from '@utils/Constants';
 import styles from './Header.module.scss';
 
 type HeaderProps = {
@@ -13,6 +14,11 @@ type HeaderProps = {
   isOpen?: boolean;
   setIsOpen?: Function;
 };
+
+interface RouteProps {
+  text: string;
+  path: string;
+}
 
 function Header() {
   const location = useRouter().asPath;
@@ -25,21 +31,6 @@ function Header() {
     </>
   );
 }
-
-const HEADER_ROUTES_DICTIONARY = [
-  {
-    path: '/about',
-    text: 'About',
-  },
-  {
-    path: '/services',
-    text: 'Services',
-  },
-  {
-    path: '/contact-info',
-    text: 'Contact Info',
-  },
-];
 
 export function GeneralHeader({ location }: HeaderProps) {
   return (
@@ -59,14 +50,16 @@ export function GeneralHeader({ location }: HeaderProps) {
         </Link>
         <nav className={styles.HeaderNavbar}>
           <ul className={styles.HeaderNavbarList}>
-            {HEADER_ROUTES_DICTIONARY.map((route, index) => (
-              <NavbarItem
-                key={`${route.text}-${index}`}
-                path={route.path}
-                text={route.text}
-                location={location}
-              />
-            ))}
+            {HEADER_ROUTES_DICTIONARY.map(
+              (route: RouteProps, index: number) => (
+                <NavbarItem
+                  key={`${route.text}-${index}`}
+                  path={route.path}
+                  text={route.text}
+                  location={location}
+                />
+              ),
+            )}
           </ul>
         </nav>
       </div>
@@ -125,7 +118,7 @@ export function MobileHeader({ isOpen, setIsOpen }: HeaderProps) {
           isOpen ? styles.MobileHeaderNavbarOpen : null
         }`}>
         <ul className={styles.MobileHeaderNavbarList}>
-          {HEADER_ROUTES_DICTIONARY.map((route, index) => (
+          {HEADER_ROUTES_DICTIONARY.map((route: RouteProps, index: number) => (
             <NavbarItem
               key={`${route.text}-${index}`}
               path={route.path}

@@ -3,7 +3,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import NexusUnityBankLogo from '@icons/nexus-unity-bank-logo-light.png';
-
 import styles from './Footer.module.scss';
 
 function Footer() {

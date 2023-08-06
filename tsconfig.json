@@ -23,12 +23,13 @@
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
       "@content/*": ["content/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@images/*": ["public/assets/images/*"],
       "@icons/*": ["public/assets/icons/*"],
-      "@styles/*": ["src/styles/*"]
+      "@images/*": ["public/assets/images/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": [

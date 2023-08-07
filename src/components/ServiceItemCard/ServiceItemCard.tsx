@@ -2,9 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { SERVICES_MAIN_PATH } from '@utils/Constants';
+import NavigationArrowIcon from '@icons/navigation-arrow-icon.png';
 import styles from './ServiceItemCard.module.scss';
 
 export interface ServiceItemCardProps {
+  id?: string;
   href: string;
   imageAlt: string;
   imageSrc: string;
@@ -48,6 +50,13 @@ function ServiceItemCard({
       </div>
       <div className={styles.ServiceItemCardCtaWrapper}>
         <p className={styles.ServiceItemCardCta}>{ctaText}</p>
+        <Image
+          alt={'Right navigation arrow icon'}
+          src={NavigationArrowIcon.src}
+          className={styles.ServiceItemCardCtaIcon}
+          width={32}
+          height={32}
+        />
       </div>
     </Link>
   );

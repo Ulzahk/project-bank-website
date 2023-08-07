@@ -1,0 +1,11 @@
+@import '@styles/Constants.scss';
+
+.Services {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 3rem;
+  margin: 0 auto;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  max-width: $max-width-desktop;
+}

@@ -10,15 +10,19 @@
   border-bottom: 0.3rem solid transparent;
   font-weight: bold;
   font-size: 1rem;
-  transition: opacity 0.1s;
+  transition:
+    border-bottom-color 0.1s,
+    opacity 0.1s;
 }
 
 .NavbarItemLink:hover {
   border-bottom-color: $main-text-color;
+  opacity: 0.7;
 }
 
 .NavbarItemLinkFocused {
   border-bottom-color: $main-text-color;
+  opacity: 0.7;
 }
 
 @media only screen and (max-width: $max-width-phone) {
